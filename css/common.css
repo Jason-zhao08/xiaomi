@@ -77,6 +77,7 @@
   background: #fff;
   overflow: hidden;
   transition: all 0.3s;
+  z-index: 24;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 .topbar-cart:hover > .cart-menu {
@@ -117,6 +118,7 @@
   color: #333;
   background: #fff;
   box-shadow: 0 1px 5px #aaa;
+  z-index: 9999; /* 这个二维码在其他人上面 */
   transition: all 0.3s;
 }
 .topbar-download:hover > .appcode {
@@ -143,6 +145,7 @@
 }
 
 .site-header {
+  position: relative;
   height: 100px;
 }
 .site-header .header-logo {
@@ -197,5 +200,78 @@
   transform: translate(55px);
 } */
 /* logo 过度动画 结束 */
+.site-header .nav_bar {
+  float: left;
+  width: 868px;
+  height: 100px;
+  line-height: 100px;
+  padding-left: 172px;
+}
+.site-header .nav_bar > ul > li {
+  float: left;
+  padding: 0 10px;
+}
+.site-header .nav_bar > ul > li > a:hover {
+  color: #ff6700;
+  transition: all 0.1s;
+}
+.site-header .nav_search {
+  float: right;
+  width: 296px;
+  height: 50px;
+  margin-top: 25px;
+  background-color: rebeccapurple;
+}
+/* 下拉列表 */
+.site-header .nav_bar .nav_bar_list {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 100px;
+  background: #fff;
 
-/* header 结束 */ ;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.site-header .nav_bar li:hover > .nav_bar_list {
+  height: 229px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+  border-top: 1px solid #e0e0e0;
+}
+
+/* 下拉列表 */
+
+/* 下拉列表 内容 */
+.site-header .nav_bar .nav_bar_list li {
+  float: left;
+  width: 204px;
+  text-align: center;
+  padding-top: 35px;
+}
+.nav_bar .nav_bar_list .nav_box_img {
+  width: 100%;
+  height: 110px;
+  margin-bottom: 20px;
+  border-right: 2px solid #e0e0e0;
+}
+.nav_bar .nav_bar_list .nav_box_img img {
+  width: 160px;
+  height: 110px;
+}
+.nav_bar .nav_bar_list p {
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+.nav_bar .nav_bar_list p:nth-of-type(2) {
+  color: #ff6700;
+}
+.nav_bar .nav_bar_list .title {
+  color: #333;
+}
+.nav_bar .nav_bar_list li:last-child .nav_box_img {
+  border: none;
+}
+/* 下拉列表 内容 */
+/* header 结束 */
