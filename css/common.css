@@ -212,28 +212,32 @@
   float: left;
   padding: 0 10px;
 }
-.site-header .nav_bar > ul > li > a:hover {
+/* 已换成js */
+/* .site-header .nav_bar > ul > li > a:hover {
   color: #ff6700;
   transition: all 0.1s;
-}
+} */
 
 /* 下拉列表 */
 .site-header .nav_bar .nav_bar_list {
   position: absolute;
   width: 100%;
-  height: 0;
+  height: 229px;
   left: 0;
   top: 100px;
   background: #fff;
-
-  overflow: hidden;
+  display: none;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+  border-top: 1px solid #e0e0e0;
+  /* 此处过度不生效后期修改 */
   transition: all 0.5s;
 }
-.site-header .nav_bar li:hover > .nav_bar_list {
+/* 此处改成js */
+/* .site-header .nav_bar li:hover > .nav_bar_list {
   height: 229px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
   border-top: 1px solid #e0e0e0;
-}
+} */
 
 /* 下拉列表 */
 
@@ -295,20 +299,20 @@
   background-color: #fff;
   border: 1px solid #e0e0e0;
 }
-.site-header .nav_search > button:hover {
+/* .site-header .nav_search > button:hover {
   background-color: #ff6700;
   border-color: #ff6700;
   color: #fff;
-}
+} */
 
 .site-header .nav_search > input:hover,
 .site-header .nav_search > input:hover + button {
   border-color: #b0b0b0;
 }
-.site-header .nav_search > input:focus,
+/* .site-header .nav_search > input:focus,
 .site-header .nav_search > input:focus + button {
   border-color: #ff6700;
-}
+} */
 .site-header .nav_search .search_text {
   position: absolute;
   left: 0;
