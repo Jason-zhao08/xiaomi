@@ -381,6 +381,7 @@
   font-family: 'iconfont' !important;
   content: '\e616';
 }
+/* 二级菜单 */
 .nav_box_two {
   display: none;
   position: absolute;
@@ -392,6 +393,9 @@
   border-left: 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
   background: #fff;
+}
+.nav_box_two1 {
+  width: 496px;
 }
 .nav_box_two > ul {
   width: 246px;
