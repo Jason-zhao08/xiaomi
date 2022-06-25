@@ -21,7 +21,6 @@ var inp = document.querySelector('#inp');
 var nav_search = document.querySelector('.nav_search');
 var btn = nav_search.querySelector('button');
 var sear = document.querySelector('.search_text');
-
 inp.onfocus = function () {
   sear.style.display = 'block';
   this.style.borderColor = '#ff6700';
@@ -32,3 +31,11 @@ inp.onblur = function () {
   this.style.borderColor = '#e0e0e0';
   btn.style.borderColor = '#e0e0e0';
 };
+
+//按下s键直接定位到搜索框
+document.addEventListener('keyup', fn);
+function fn(e) {
+  if (e.keyCode === 83) {
+    inp.focus();
+  }
+}
