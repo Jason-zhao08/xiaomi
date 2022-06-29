@@ -147,6 +147,7 @@ window.addEventListener('load', function () {
     ol.children[circle].className = 'current';
   }
   //7.自动播放
+  //封装函数
   var timer = setInterval(function () {
     //手动调用点击事件
     arrowR.click();
