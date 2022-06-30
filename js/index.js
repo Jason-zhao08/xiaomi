@@ -72,7 +72,7 @@ window.addEventListener('load', function () {
     //3-1创建小li
     var li = document.createElement('li');
     // 5-2记录当前小圆圈的索引号 通过自定义属性来做
-    li.setAttribute('index', i);
+    li.setAttribute('data-index', i);
     //3-2 把创建的小li追加给ol
     ol.appendChild(li);
     //4.小圆圈的排他思想 我们可以直接在生成小圆圈的同时直接绑定点击事件
@@ -87,7 +87,7 @@ window.addEventListener('load', function () {
       // ul 的移动距离 小圆圈的索引号 乘以 图片的宽度 注意是负值
       //5-2-1 当我们点击了某个小li 就拿到当前小li 的索引号
       //小圆圈的索引号
-      var index = this.getAttribute('index');
+      var index = this.getAttribute('data-index');
       //6-1-6 当我们点击了某个小li 就要把这个li 的索引号给 num
       //这个是解决点击小圆点后再点击有按钮显示的不是下一张照片
       num = index;
