@@ -105,38 +105,50 @@ window.addEventListener('load', function () {
   var num = 0;
   //6-1-1 circle 控制小圆圈的播放
   var circle = 0;
+  //flag 节流阀
+  var flag = true;
   //6-2 点击左侧按钮 图片滚动和左侧差不多
   arrowL.addEventListener('click', function () {
-    if (num == 0) {
-      num = ul.children.length - 1;
-      ul.style.left = -num * navBoxWidth + 'px';
+    if (flag) {
+      flag = false;
+      if (num == 0) {
+        num = ul.children.length - 1;
+        ul.style.left = -num * navBoxWidth + 'px';
+      }
+      num--;
+      animate(ul, -num * navBoxWidth, function () {
+        flag = true;
+      });
+      circle--;
+      // if (circle < 0) {
+      //   circle = ol.children.length - 1;
+      // }
+      circle = circle < 0 ? ol.children.length - 1 : circle;
+      //调用函数
+      circleChange();
     }
-    num--;
-    animate(ul, -num * navBoxWidth);
-    circle--;
-    // if (circle < 0) {
-    //   circle = ol.children.length - 1;
-    // }
-    circle = circle < 0 ? ol.children.length - 1 : circle;
-    //调用函数
-    circleChange();
   });
   //6-1点击右侧按钮，图片滚动 如果走到了最后复制的一张图片，此时 我们的ul 要快速复原 left 改为 0
   arrowR.addEventListener('click', function () {
-    if (num == ul.children.length - 1) {
-      ul.style.left = 0;
-      num = 0;
+    if (flag) {
+      flag = false;
+      if (num == ul.children.length - 1) {
+        ul.style.left = 0;
+        num = 0;
+      }
+      num++;
+      animate(ul, -num * navBoxWidth, function () {
+        flag = true;
+      });
+      //6-1-2点击右侧按钮，小圆圈跟随一起变化 可以再声明一个变量控制小圆圈的播放
+      circle++;
+      //6-1-3 如果circle == 3 说明走到最后我们克隆的这张图片了 我们就复原
+      if (circle == ol.children.length) {
+        circle = 0;
+      }
+      //调用函数
+      circleChange();
     }
-    num++;
-    animate(ul, -num * navBoxWidth);
-    //6-1-2点击右侧按钮，小圆圈跟随一起变化 可以再声明一个变量控制小圆圈的播放
-    circle++;
-    //6-1-3 如果circle == 3 说明走到最后我们克隆的这张图片了 我们就复原
-    if (circle == ol.children.length) {
-      circle = 0;
-    }
-    //调用函数
-    circleChange();
   });
   function circleChange() {
     // 6-1-4先清除其余小圆圈的current类名
